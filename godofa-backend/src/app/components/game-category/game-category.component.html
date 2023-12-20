@@ -1,0 +1,12 @@
+
+<h5>Oyun Kategorileri</h5>
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+<ul  *ngIf="dataLoaded==true" class="list-group">
+    <li  (click)="setCurrentGameCategory(gameCategory)" *ngFor ="let gameCategory of gameCategories" [class]="getCurrentGameCategoryClass(gameCategory)"> {{gameCategory.gameCategoryName}}</li>
+</ul>
+
+<h5 *ngIf="currentGameCategory">{{currentGameCategory.gameCategoryName}}</h5>
+

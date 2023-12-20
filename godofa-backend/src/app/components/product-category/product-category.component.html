@@ -1,0 +1,12 @@
+
+<h5>Ürün Kategorileri</h5>
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+<ul *ngIf="dataLoaded==true" class="list-group">
+    <li (click)="setCurrentProductCategory(productCategory)" *ngFor ="let productCategory of productCategories" [class]="getCurrentProductCategoryClass(productCategory)"> {{productCategory.productCategoryName}}</li>
+</ul>
+
+
+<h5 *ngIf="currentProductCategory">{{currentProductCategory.productCategoryName}}</h5>
